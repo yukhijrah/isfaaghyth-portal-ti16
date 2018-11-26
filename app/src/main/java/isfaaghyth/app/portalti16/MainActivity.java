@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import isfaaghyth.app.portalti16.adapter.MahasiswaAdapter;
 import isfaaghyth.app.portalti16.entity.DaftarMahasiswa;
 import isfaaghyth.app.portalti16.network.Network;
 import isfaaghyth.app.portalti16.network.Routes;
@@ -40,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
                     //get title
                     Log.d("isfaaghyth", mahasiswas.getTitle());
+
+                    //tampilkan daftar mahasiswa di recyclerview
+                    MahasiswaAdapter adapter = new MahasiswaAdapter(mahasiswas.getData());
+                    
                 }
             }
 
