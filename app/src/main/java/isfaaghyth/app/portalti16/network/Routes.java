@@ -1,5 +1,8 @@
 package isfaaghyth.app.portalti16.network;
 
+import isfaaghyth.app.portalti16.entity.DaftarMahasiswa;
+import isfaaghyth.app.portalti16.entity.Mahasiswa;
+import retrofit2.Call;
 import retrofit2.http.GET;
 
 /**
@@ -14,6 +17,6 @@ public interface Routes {
      * https://ti16.herokuapp.com/list.php
      */
     @GET("list.php")
-    void getMahasiswa();
+    Call<DaftarMahasiswa> getMahasiswa();
 
 }
