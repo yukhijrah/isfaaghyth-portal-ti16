@@ -50,17 +50,23 @@ public class AddMahasiswaActivity extends AppCompatActivity {
             public void onResponse(Call<Mahasiswa> call, Response<Mahasiswa> response) {
                 if (response.isSuccessful()) {
                     //ketika post nya berhasil, maka akan kembali ke mainActivity
-                    finish(); //ini akan destroy si activity AddMahasiswaActivity()
+                    finish(); //ini akan destroy si AddMahasiswaActivity()
                 } else {
-                    Toast.makeText(AddMahasiswaActivity.this, "Maaf, terjadi kesalahan", Toast.LENGTH_LONG).show();
+                    onErrorAddMahasiswa();
                 }
             }
 
             @Override
             public void onFailure(Call<Mahasiswa> call, Throwable t) {
-                Toast.makeText(AddMahasiswaActivity.this, "Maaf, terjadi kesalahan", Toast.LENGTH_LONG).show();
+                onErrorAddMahasiswa();
             }
         });
+    }
+
+    private void onErrorAddMahasiswa() {
+        Toast.makeText(AddMahasiswaActivity.this,
+                "Maaf, terjadi kesalahan",
+                Toast.LENGTH_LONG).show();
     }
 
 }
