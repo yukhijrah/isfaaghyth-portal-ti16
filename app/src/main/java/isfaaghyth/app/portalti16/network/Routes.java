@@ -3,10 +3,12 @@ package isfaaghyth.app.portalti16.network;
 import isfaaghyth.app.portalti16.entity.DaftarMahasiswa;
 import isfaaghyth.app.portalti16.entity.Mahasiswa;
 import retrofit2.Call;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 /**
  * Created by isfaaghyth on 26/11/18.
@@ -16,16 +18,12 @@ public interface Routes {
 
     /**
      * mendefinisikan route dari web services yang disediakan
-     * jika di deskripsikan, berarti:
-     * https://ti16.herokuapp.com/list.php
      */
     @GET("dev/list_mahasiswa")
     Call<DaftarMahasiswa> getMahasiswa();
 
     /**
      * untuk melakukan post data mahasiswa baru
-     * jika di deskripsikan, berarti:
-     * https://ti16.herokuapp.com/add.php
      * @param name
      * @param nim
      */
@@ -34,6 +32,16 @@ public interface Routes {
     Call<Mahasiswa> postMahasiswa(
             @Field("name") String name,
             @Field("nim") String nim
+    );
+
+    /**
+     * untuk menghapus mahasiswa berdasarkan id
+     * @param mhsId
+     * @return
+     */
+    @DELETE("mahasiswatest/{mhsId}")
+    Call<Mahasiswa> deleteMahasiswa(
+            @Path("mhsId") String mhsId
     );
 
 }

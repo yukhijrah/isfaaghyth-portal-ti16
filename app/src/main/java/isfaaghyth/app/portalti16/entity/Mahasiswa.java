@@ -5,8 +5,13 @@ package isfaaghyth.app.portalti16.entity;
  * github: @isfaaghyth
  */
 public class Mahasiswa {
+    private int id;
     private String name;
     private String nim;
+
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
