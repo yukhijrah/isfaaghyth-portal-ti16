@@ -1,11 +1,13 @@
 package isfaaghyth.app.portalti16;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import isfaaghyth.app.portalti16.adapter.MahasiswaAdapter;
@@ -37,7 +39,14 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         lstMahasiswa.setLayoutManager(linearLayoutManager);
 
-        requestDaftarMahasiswa();
+        //requestDaftarMahasiswa();
+
+        findViewById(R.id.btn_add).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AddMahasiswaActivity.class));
+            }
+        });
     }
 
     @Override

@@ -19,7 +19,7 @@ public interface Routes {
      * jika di deskripsikan, berarti:
      * https://ti16.herokuapp.com/list.php
      */
-    @GET("list.php")
+    @GET("dev/list_mahasiswa")
     Call<DaftarMahasiswa> getMahasiswa();
 
     /**
@@ -29,7 +29,7 @@ public interface Routes {
      * @param name
      * @param nim
      */
-    @POST("add.php")
+    @POST("dev/insert_mahasiswa")
     @FormUrlEncoded
     Call<Mahasiswa> postMahasiswa(
             @Field("name") String name,
