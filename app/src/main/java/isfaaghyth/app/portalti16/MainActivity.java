@@ -19,6 +19,7 @@ import isfaaghyth.app.portalti16.entity.DaftarMahasiswa;
 import isfaaghyth.app.portalti16.entity.Mahasiswa;
 import isfaaghyth.app.portalti16.network.Network;
 import isfaaghyth.app.portalti16.network.Routes;
+import isfaaghyth.app.portalti16.util.Consts;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -49,7 +50,9 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_add).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, DetailMahasiswaActivity.class));
+                Intent addIntent = new Intent(MainActivity.this, DetailMahasiswaActivity.class);
+                addIntent.putExtra(Consts.KEY_ACTION_DETAIL, Consts.INTENT_ADD);
+                startActivity(addIntent);
             }
         });
     }
