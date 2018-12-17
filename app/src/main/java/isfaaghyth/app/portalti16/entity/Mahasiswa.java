@@ -1,10 +1,12 @@
 package isfaaghyth.app.portalti16.entity;
 
+import java.io.Serializable;
+
 /**
  * Created by isfaaghyth on 26/11/18.
  * github: @isfaaghyth
  */
-public class Mahasiswa {
+public class Mahasiswa implements Serializable {
     private int id;
     private String name;
     private String nim;
