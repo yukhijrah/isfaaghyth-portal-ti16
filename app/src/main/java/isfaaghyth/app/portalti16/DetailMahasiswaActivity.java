@@ -1,6 +1,5 @@
 package isfaaghyth.app.portalti16;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,12 +10,11 @@ import android.widget.Toast;
 import isfaaghyth.app.portalti16.entity.Mahasiswa;
 import isfaaghyth.app.portalti16.network.Network;
 import isfaaghyth.app.portalti16.network.Routes;
-import okhttp3.Route;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AddMahasiswaActivity extends AppCompatActivity {
+public class DetailMahasiswaActivity extends AppCompatActivity {
 
     private EditText edtName, edtNim;
     private Button btnAdd;
@@ -24,7 +22,7 @@ public class AddMahasiswaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_mahasiswa);
+        setContentView(R.layout.activity_detail_mahasiswa);
 
         //casting untuk semua view
         edtName = (EditText) findViewById(R.id.edt_name);
@@ -50,7 +48,7 @@ public class AddMahasiswaActivity extends AppCompatActivity {
             public void onResponse(Call<Mahasiswa> call, Response<Mahasiswa> response) {
                 if (response.isSuccessful()) {
                     //ketika post nya berhasil, maka akan kembali ke mainActivity
-                    finish(); //ini akan destroy si AddMahasiswaActivity()
+                    finish(); //ini akan destroy si DetailMahasiswaActivity()
                 } else {
                     onErrorAddMahasiswa();
                 }
@@ -64,7 +62,7 @@ public class AddMahasiswaActivity extends AppCompatActivity {
     }
 
     private void onErrorAddMahasiswa() {
-        Toast.makeText(AddMahasiswaActivity.this,
+        Toast.makeText(DetailMahasiswaActivity.this,
                 "Maaf, terjadi kesalahan",
                 Toast.LENGTH_LONG).show();
     }
