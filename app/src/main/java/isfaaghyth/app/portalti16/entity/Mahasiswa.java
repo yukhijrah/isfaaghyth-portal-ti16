@@ -1,13 +1,21 @@
 package isfaaghyth.app.portalti16.entity;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
 import java.io.Serializable;
 
 /**
  * Created by isfaaghyth on 26/11/18.
  * github: @isfaaghyth
  */
+
+@Entity(tableName = "mahasiswa")
 public class Mahasiswa implements Serializable {
+
+    @PrimaryKey(autoGenerate = true)
     private int id;
+
     private String name;
     private String nim;
 
